@@ -1,0 +1,14 @@
+D:\devops_1\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.deps.json
+D:\devops_1\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.runtimeconfig.json
+D:\devops_1\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.dll
+D:\devops_1\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.pdb
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.csproj.AssemblyReference.cache
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.AssemblyInfoInputs.cache
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.AssemblyInfo.cs
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.csproj.CoreCompileInputs.cache
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.dll
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\refint\CarRentalLibrary.dll
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.pdb
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\CarRentalLibrary.genruntimeconfig.cache
+D:\devops_1\CarRentalLibrary\obj\Debug\net6.0\ref\CarRentalLibrary.dll
