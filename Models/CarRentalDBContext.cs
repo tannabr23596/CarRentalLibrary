@@ -16,6 +16,7 @@ namespace CarRentalLibrary.Models
         {
         }
 
+        public virtual DbSet<Booking> Bookings { get; set; } = null!;
         public virtual DbSet<Car> Cars { get; set; } = null!;
         public virtual DbSet<Carrental> Carrentals { get; set; } = null!;
 
@@ -30,6 +31,48 @@ namespace CarRentalLibrary.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Booking>(entity =>
+            {
+                entity.ToTable("booking");
+
+                entity.Property(e => e.Bookingid).HasColumnName("bookingid");
+
+                entity.Property(e => e.Bookingdate)
+                    .HasColumnType("date")
+                    .HasColumnName("bookingdate");
+
+                entity.Property(e => e.Carid)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("carid");
+
+                entity.Property(e => e.Carrentalcompanyid)
+                    .HasMaxLength(50)
+                    .IsUnicode(false)
+                    .HasColumnName("carrentalcompanyid");
+
+                entity.Property(e => e.Customername)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("customername");
+
+                entity.Property(e => e.InsuranceNeeded).HasColumnName("insurance_needed");
+
+                entity.Property(e => e.Luggagespace).HasColumnName("luggagespace");
+
+                entity.Property(e => e.Numberofpeople).HasColumnName("numberofpeople");
+
+                entity.HasOne(d => d.Car)
+                    .WithMany(p => p.Bookings)
+                    .HasForeignKey(d => d.Carid)
+                    .HasConstraintName("FK__booking__carid__3B75D760");
+
+                entity.HasOne(d => d.Carrentalcompany)
+                    .WithMany(p => p.Bookings)
+                    .HasForeignKey(d => d.Carrentalcompanyid)
+                    .HasConstraintName("FK__booking__carrent__3C69FB99");
+            });
+
             modelBuilder.Entity<Car>(entity =>
             {
                 entity.ToTable("car");
@@ -38,6 +81,11 @@ namespace CarRentalLibrary.Models
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("carid");
+
+                entity.Property(e => e.Caravailability)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("caravailability");
 
                 entity.Property(e => e.Carmodel)
                     .HasMaxLength(100)
@@ -49,11 +97,7 @@ namespace CarRentalLibrary.Models
                     .IsUnicode(false)
                     .HasColumnName("carrentalid");
 
-                entity.Property(e => e.Freecancelation)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasColumnName("freecancelation")
-                    .IsFixedLength();
+                entity.Property(e => e.Freecancelation).HasColumnName("freecancelation");
 
                 entity.Property(e => e.Fueltype)
                     .HasMaxLength(50)

@@ -7,6 +7,7 @@ namespace CarRentalLibrary.Models
     {
         public Carrental()
         {
+            Bookings = new HashSet<Booking>();
             Cars = new HashSet<Car>();
         }
 
@@ -14,6 +15,7 @@ namespace CarRentalLibrary.Models
         public string? Carrentalcompanyname { get; set; }
         public string? Location { get; set; }
 
+        public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Car> Cars { get; set; }
     }
 }
